@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link href="./css/style.css" rel="stylesheet" />
+    <title>IuK - Die Code-Suche | Insert Coin</title>
+  </head>
+  <body>
+	
+	<section class="jumbotron text-center">
+	<div class="container">
+		<h1>Insert Coin</h1>
+		<br/>
+		<p class="lead text-muted">
+			Wie wird hieraus eine korrekte Gleichung durch Verschieben eines Streichholzes? Gebe die korrekte Gleichung ohne Leerzeichen in das Lösungsfeld ein!
+		</p>
+		<br/>
+		<div>
+			<img src="pics/streichholz.jpg" class="img-fluid" alt="Streichholz">
+		</div>
+		<br/>
+		
+		<p>
+			<div>
+				<form>
+					<div class="form-group row">
+						<label for="gleichung" class="col-4 col-form-label">Gleichung</label>
+						<input type="text" class="form-control col-8" id="gleichung" placeholder="185+15=270">
+					</div>
+					<button type="button" onclick="check()" class="btn btn-primary">Check!</button>
+				</form>
+			</div>
+		</p>
+		<div id="alert_placeholder"></div>
+    </div>
+  </section>
+
+  
+  	<script>
+	
+		var counter = 0;
+	
+		function check() {
+		
+			counter++;
+
+			var result = document.getElementById("gleichung").value;
+			
+			if (result == "195+75=270") {
+				//wenn du bis hier gekommen bist um dir die Antwort zu erschleichen, dann bewirb dich bitte direkt beim IuK! Du weisst wie es läuft!
+				$('#alert_placeholder').html('<div class="alert alert-success">Deine Antwort ist richtig! Der Weg führt dich nach <strong>Norden</strong></div>')
+			} else {
+				var message;
+				if (counter == 1) { message = "Deine Antwort ist leider falsch. Denk nochmal nach!";}
+				if (counter > 1 && counter <=9) { message = "Deine Antwort ist leider falsch. Du hattest bereits "+counter+" Versuche. Denk nochmal nach!";}
+				if (counter >= 10) { message = "Nicht versuchen! Machen! Du hattest bereits "+counter+" Versuche.";}
+				
+				$('#alert_placeholder').html('<div class="alert alert-warning">'+message+'</div>')
+			}
+		}
+
+	
+	</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/jquery-3.4.1.min.js"</script>
+    <script src="./js/popper.min.js"</script>
+    <script src="./js/bootstrap.min.js"</script>
+  </body>
+</html>
