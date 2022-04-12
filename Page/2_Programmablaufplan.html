@@ -8,138 +8,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link href="./css/style.css" rel="stylesheet" />
-    <title>IuK - Die Code-Suche | Hangman</title>
+    <title>Ablaufplan</title>
   </head>
   <body>
 	
 	<section class="jumbotron text-center">
 	<div class="container">
-		<h1>Hangman</h1>
-		<p class="lead text-muted">Wie oft muss jedes Teil um 90° im Uhrzeigersinn gedreht werden um von jeder Farbe zwei Seile zu erhalten?</p>
-		<br/>
-		<div>
-			<img src="pics/seile.png" class="img-fluid" alt="Seile">
-		</div>
-		<br/>
-		<p>
-			<form>
-				<div class="form-group row">
-					<label for="teil1" class="col-4 col-form-label">Links oben</label>
-					<div class="col-8">
-						<select class="form-control" id="teil1" >
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label for="teil2" class="col-4 col-form-label">Rechts oben</label>
-					<div class="col-8">
-						<select class="form-control" id="teil2">
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label for="teil3" class="col-4 col-form-label">Links unten</label>
-					<div class="col-8">
-						<select class="form-control" id="teil3">
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group row">
-					<label for="teil4" class="col-4 col-form-label">Rechts unten</label>
-					<div class="col-8">
-						<select class="form-control" id="teil4">
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-						</select>
-					</div>
-				</div>
-				
-				<button type="button" onclick="check()" class="btn btn-primary">Check!</button>
-			</form>
-		</p>
-		<div id="alert_placeholder"></div>
-    </div>
-  </section>
-
-  
-
-	<script>
-	
-		var counter = 0;
-	
-		function check() {
+		<h1>Ablaufplan</h1>
 		
-			counter++;
-
-			var teil1 = document.getElementById("teil1").value;
-			var teil2 = document.getElementById("teil2").value;
-			var teil3 = document.getElementById("teil3").value;
-			var teil4 = document.getElementById("teil4").value;
-			var result = teil1 + "" + teil2 + "" + teil3 + "" + teil4
-			
-			if (result == "2003") {
-				//wenn du bis hier gekommen bist um dir die Antwort zu erschleichen, dann bewirb dich bitte direkt beim IuK! Du weisst wie es läuft!
-				$('#alert_placeholder').html('<div class="alert alert-success">Deine Antwort ist richtig! Der Weg führt dich nach <strong>Norden</strong></div>')
-			} else {
-				var message;
-				if (counter == 1) { message = "Deine Antwort ist leider falsch. Denk nochmal nach!";}
-				if (counter > 1 && counter <=9) { message = "Deine Antwort ist leider falsch. Du hattest bereits "+counter+" Versuche. Denk nochmal nach!";}
-				if (counter >= 10) { message = "Nicht versuchen! Machen! Du hattest bereits "+counter+" Versuche.";}
-				
-				$('#alert_placeholder').html('<div class="alert alert-warning">'+message+'</div>')
-			}
-		}
-
-	
-	</script>
-	
-
-	    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="./js/jquery-3.4.1.min.js"</script>
-    <script src="./js/popper.min.js"</script>
-    <script src="./js/bootstrap.min.js"</script>
+		<img src=“pics/ABlaufplan“>
 	
 	
   </body>
