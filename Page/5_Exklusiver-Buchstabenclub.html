@@ -14,16 +14,68 @@
 	
 	<section class="jumbotron text-center">
 	<div class="container">
-		<h1>Ein guter Beamter hat immer Zettel und Stift dabei!</h1>
+		<h1>Exklusiver Buchstabenclub</h1>
 		<br/>
-		<p class="lead text-muted">llruuullllrroollorrllluuullooorr</p>
+		<p class="lead text-muted">In den exklusiven Buchstabenclub dürfen nur sehr privilegierte Buchstaben eintreten. Beim letzten Treffen hat sich ein Buchstabe Zutritt verschafft, der nicht zur <b>auserwählten Runde</b> gehört. Welcher Buchstabe war das?</p>
+		<p class="lead text-muted">
+			<b>P G D B L C S</b>
+		</p>
     </div>
+	
+	
+	<p>
+			<div>
+				<form>
+					<div class="c">
+						<p>
+							<br>
+							Eingabe:
+						</p>
+						<!--<label for="gleichung" class="col-4 col-form-label"></label>-->
+						<input type="text" class="form-control col-8" id="gleichung" placeholder="" style="width: 200px;display: block;margin: auto;" />
+					</div><br>
+					<button type="button" onclick="check()" class="btn btn-primary">Check!</button>
+				</form>
+			</div>
+			<div>
+				<img src="pics/kingthts_of_the_round_table.png" class="img-fluid" alt="Round Table">
+			</div>
+		</p>
+		<div id="alert_placeholder"></div>
+    </div>
+	
   </section>
+  
+	<script>
+		
+			var counter = 0;
+		
+			function check() {
+			
+				counter++;
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="./js/jquery-3.4.1.min.js"</script>
-    <script src="./js/popper.min.js"</script>
-    <script src="./js/bootstrap.min.js"</script>
+				var result = document.getElementById("gleichung").value;
+				
+				if (result == "L") {
+					//wenn du bis hier gekommen bist um dir die Antwort zu erschleichen, dann bewirb dich bitte direkt beim IuK! Du weisst wie es läuft!
+					$('#alert_placeholder').html('<div class="alert alert-success">Deine Antwort ist richtig! Der Weg führt dich nach <strong>Norden</strong></div>')
+				} else {
+					var message;
+					if (counter == 1) { message = "Deine Antwort ist leider falsch. Denk nochmal nach!";}
+					if (counter > 1 && counter <=9) { message = "Deine Antwort ist leider falsch. Du hattest bereits "+counter+" Versuche. Denk nochmal nach!";}
+					if (counter >= 10) { message = "Nicht versuchen! Machen! Du hattest bereits "+counter+" Versuche.";}
+					
+					$('#alert_placeholder').html('<div class="alert alert-warning">'+message+'</div>')
+				}
+			}
+
+		
+		</script>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="./js/jquery-3.4.1.min.js"</script>
+		<script src="./js/popper.min.js"</script>
+		<script src="./js/bootstrap.min.js"</script>
   </body>
 </html>
