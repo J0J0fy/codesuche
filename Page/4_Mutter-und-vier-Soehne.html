@@ -17,20 +17,26 @@
 		<h1>Insert Coin</h1>
 		<br/>
 		<p class="lead text-muted">
-			Wie wird hieraus eine korrekte Gleichung durch Verschieben eines Streichholzes? Gebe die korrekte Gleichung ohne Leerzeichen in das Lösungsfeld ein!
+			Die Mutter von jemanden hat vier Söhne:<br>
+			<br>
+			Nord, West und Süd.<br>
+			<br>
+			Wie lautet der Name des vierten Sohns.<br>
+			<br>
+		<!--
 		</p>
 		<br/>
 		<div>
 			<img src="pics/streichholz.jpg" class="img-fluid" alt="Streichholz">
 		</div>
 		<br/>
-		
+		-->
 		<p>
 			<div>
 				<form>
 					<div class="form-group row">
-						<label for="gleichung" class="col-4 col-form-label">Gleichung</label>
-						<input type="text" class="form-control col-8" id="gleichung" placeholder="185+15=270">
+						<label for="gleichung" class="col-4 col-form-label">Trage den Namen vom vierten Sohn ein:</label>
+						<input type="text" class="form-control col-8" id="gleichung" placeholder="">
 					</div>
 					<button type="button" onclick="check()" class="btn btn-primary">Check!</button>
 				</form>
@@ -51,7 +57,7 @@
 
 			var result = document.getElementById("gleichung").value;
 			
-			if (result == "195+75=270") {
+			if (result == "Wie") {
 				//wenn du bis hier gekommen bist um dir die Antwort zu erschleichen, dann bewirb dich bitte direkt beim IuK! Du weisst wie es läuft!
 				$('#alert_placeholder').html('<div class="alert alert-success">Deine Antwort ist richtig! Der Weg führt dich nach <strong>Norden</strong></div>')
 			} else {
